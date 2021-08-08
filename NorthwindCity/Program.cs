@@ -23,6 +23,9 @@ namespace NorthwindCity
             string input = ReadLine().ToLower();
 
             var filteredCompany = customers.Where(c => c.City.ToLower() == input);
+            var count = filteredCompany.LongCount();
+
+            WriteLine($"There are {count} customers in New York:");
             foreach (var com in filteredCompany)
             {
                 WriteLine($"{com.Company}");
